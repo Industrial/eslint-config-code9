@@ -467,7 +467,7 @@ const typescriptConfiguration = {
     'plugin:prettier/recommended',
   ],
   parserOptions: {
-    project: [`${__dirname}/tsconfig.json`],
+    project: [`./tsconfig.json`],
     sourceType: 'module',
     ecmaVersion: 2020,
   },
