@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-code9",
+  "name": "@code9/eslint-config",
   "version": "0.1.0",
   "description": "Code9's ESLint config",
   "main": "index.js",
