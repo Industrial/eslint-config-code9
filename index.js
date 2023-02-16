@@ -225,7 +225,7 @@ const javascriptConfiguration = {
     'sort-imports': ['off'],
     'sort-keys': ['off'],
     'sort-vars': ['off'],
-    'spaced-comment': ['error', 'always'],
+    'spaced-comment': ['off'],
     strict: ['off'],
     'symbol-description': ['error'],
     'vars-on-top': ['off'],
