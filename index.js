@@ -1,5 +1,5 @@
 const javascriptConfiguration = {
-  files: ['**/*.js'],
+  files: ['**/*.{js,mjs,cjs}'],
   plugins: ['simple-import-sort'],
   extends: ['plugin:import/errors', 'plugin:import/warnings', 'prettier', 'plugin:prettier/recommended'],
   env: {
