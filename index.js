@@ -1,7 +1,7 @@
 const javascriptConfiguration = {
   files: ['**/*.{js,mjs,cjs}'],
   plugins: ['simple-import-sort'],
-  extends: ['plugin:import/errors', 'plugin:import/warnings', 'prettier', 'plugin:prettier/recommended'],
+  extends: ['plugin:import/errors', 'plugin:import/warnings'],
   env: {
     node: true,
     es2021: true,
@@ -82,7 +82,13 @@ const javascriptConfiguration = {
 
     // Suggestions
     'accessor-pairs': ['error'],
-    'arrow-body-style': ['error', 'always'],
+    'arrow-body-style': [
+      'error',
+      'as-needed',
+      {
+        requireReturnForObjectLiteral: true,
+      },
+    ],
     'block-scoped-var': ['error'],
     camelcase: ['error'],
     'capitalized-comments': ['off'],
@@ -98,7 +104,13 @@ const javascriptConfiguration = {
     eqeqeq: ['error', 'always'],
     'func-name-matching': ['error'],
     'func-names': ['error', 'as-needed'],
-    'func-style': ['error', 'expression'],
+    'func-style': [
+      'error',
+      'declaration',
+      {
+        allowArrowFunctions: true,
+      },
+    ],
     'grouped-accessor-pairs': ['error'],
     'guard-for-in': ['off'],
     'id-denylist': ['off'],
@@ -254,7 +266,10 @@ const javascriptConfiguration = {
     'eol-last': ['error', 'always'],
     'func-call-spacing': ['error', 'never'],
     'function-call-argument-newline': ['error', 'consistent'],
-    'function-paren-newline': ['error', 'consistent'],
+    'function-paren-newline': [
+      'error',
+      'never',
+    ],
 
     'generator-star-spacing': [
       'error',
@@ -373,21 +388,15 @@ const javascriptConfiguration = {
 const reactConfiguration = {
   plugins: ['react'],
   rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
     'react-hooks/exhaustive-deps': 'off',
     'react-hooks/rules-of-hooks': 'off',
     'react/destructuring-assignment': 'warn',
     'react/display-name': 'off',
     'react/forbid-prop-types': 'warn',
     'react/function-component-definition': [
-      2,
+      'error',
       {
-        namedComponents: 'arrow-function',
+        namedComponents: 'function-declaration',
         unnamedComponents: 'arrow-function',
       },
     ],
@@ -463,8 +472,6 @@ const typescriptConfiguration = {
     'plugin:import/errors',
     'plugin:import/warnings',
     // 'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'plugin:prettier/recommended',
   ],
   parserOptions: {
     project: [`./tsconfig.json`],
@@ -548,10 +555,10 @@ const typescriptConfiguration = {
     '@typescript-eslint/no-unnecessary-type-constraint': ['error'],
     '@typescript-eslint/no-unsafe-argument': ['error'],
     '@typescript-eslint/no-unsafe-assignment': ['off'],
-    '@typescript-eslint/no-unsafe-call': ['error'],
+    '@typescript-eslint/no-unsafe-call': ['off'],
     '@typescript-eslint/no-unsafe-declaration-merging': ['error'],
-    '@typescript-eslint/no-unsafe-member-access': ['error'],
-    '@typescript-eslint/no-unsafe-return': ['error'],
+    '@typescript-eslint/no-unsafe-member-access': ['off'],
+    '@typescript-eslint/no-unsafe-return': ['off'],
     '@typescript-eslint/no-useless-empty-export': ['warn'],
     '@typescript-eslint/no-var-requires': ['error'],
     '@typescript-eslint/non-nullable-type-assertion-style': ['error'],
@@ -575,7 +582,7 @@ const typescriptConfiguration = {
     '@typescript-eslint/promise-function-async': ['error'],
     '@typescript-eslint/require-array-sort-compare': ['error'],
     '@typescript-eslint/restrict-plus-operands': ['error'],
-    '@typescript-eslint/restrict-template-expressions': ['error'],
+    '@typescript-eslint/restrict-template-expressions': ['off'],
     '@typescript-eslint/sort-type-constituents': ['error'],
     '@typescript-eslint/sort-type-union-intersection-members': ['error'],
     '@typescript-eslint/strict-boolean-expressions': ['off'],
