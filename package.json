@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-code9",
-  "version": "0.4.1",
+  "version": "0.5.1",
   "description": "Code9's ESLint config",
   "main": "index.js",
   "scripts": {},
