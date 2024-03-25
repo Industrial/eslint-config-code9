@@ -268,7 +268,7 @@ const javascriptConfiguration = {
     'function-call-argument-newline': ['error', 'consistent'],
     'function-paren-newline': [
       'error',
-      'never',
+      'multiline',
     ],
 
     'generator-star-spacing': [
